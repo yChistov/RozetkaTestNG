@@ -1,0 +1,13 @@
+com\rozetka\core\web\pages\MyHomePage.class
+com\rozetka\core\web\WebComponent.class
+com\rozetka\core\DriverMaster.class
+com\rozetka\core\web\elements\Link.class
+com\rozetka\core\web\WebPage.class
+com\rozetka\core\web\pages\BasePage.class
+com\rozetka\core\web\Wait.class
+com\rozetka\core\web\elements\TextInput.class
+com\rozetka\core\BrowserType.class
+com\rozetka\core\DriverMaster$1.class
+com\rozetka\core\BaseSetup.class
+com\rozetka\core\web\Component.class
+com\rozetka\core\web\elements\Button.class
