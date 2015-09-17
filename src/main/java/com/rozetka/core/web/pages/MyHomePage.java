@@ -31,6 +31,10 @@ public class MyHomePage extends WebPage<MyHomePage> {
         return new BasePage(driver).waitUntilAvailable();
     }
 
+    public FindPage goToFindPage() throws TimeoutException {
+        return new FindPage(driver).waitUntilAvailable();
+    }
+
     private Link getLogout(){
         return new Link(driver,
                 By.cssSelector(".profile-m-edit-signout"));

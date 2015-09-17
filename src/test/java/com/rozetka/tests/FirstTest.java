@@ -12,7 +12,11 @@ public class FirstTest extends BaseSetup {
     public void startURL() throws TimeoutException {
         new MyHomePage(driver)
                 .loadAsAnonymousUser()
-                .loginAs("misteriys@ukr.net", "ghjuhfvbcn");
+                .loginAs("misteriys@ukr.net", "ghjuhfvbcn")
+                .goToFindPage()
+                .getSearch("gtx 980")
+                .goToBuyPage()
+                .getBuySearch();
         try {
             Thread.sleep(2000);
         } catch (Exception e) {
