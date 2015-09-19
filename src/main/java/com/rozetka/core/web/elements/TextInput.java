@@ -11,6 +11,7 @@ public class TextInput extends WebComponent<TextInput> {
     }
 
     public TextInput inputText(String text){
+        getWebElement().clear();
         getWebElement().sendKeys(text);
         return this;
     }

@@ -15,8 +15,10 @@ public class FirstTest extends BaseSetup {
                 .loginAs("misteriys@ukr.net", "ghjuhfvbcn")
                 .goToFindPage()
                 .getSearch("gtx 980")
-                .goToBuyPage()
-                .getBuySearch();
+                .getBuy()
+                .getRefresh()
+                .getSearch("i7")
+                .getBuy();
         try {
             Thread.sleep(2000);
         } catch (Exception e) {
