@@ -18,7 +18,7 @@ public class FirstTest extends BaseSetup {
                 .getBuy()
                 .getRefresh()
                 .getSearch("i7")
-                .getBuy();
+                .getBuy().getDelete();
         try {
             Thread.sleep(2000);
         } catch (Exception e) {
