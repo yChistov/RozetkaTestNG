@@ -19,6 +19,7 @@ public class DriverMaster {
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", "D:\\Program\\chromedriver.exe");
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
                 break;
             case IE:
                 System.setProperty("webdriver.ie.driver","D:\\Program\\IEDriverServer.exe");

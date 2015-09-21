@@ -1,6 +1,7 @@
 package com.rozetka.core;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -17,10 +18,10 @@ public abstract class BaseSetup {
         driver = getDriver(browser);
 
     }
-/*
+
     @AfterSuite(alwaysRun = true)
     public void tearDown(){
         driver.quit();
-    }*/
+    }
 }
 

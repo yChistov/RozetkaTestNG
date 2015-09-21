@@ -2,6 +2,7 @@ package com.rozetka.core.web.pages;
 
 import com.rozetka.core.web.WebPage;
 import com.rozetka.core.web.elements.Button;
+import com.rozetka.core.web.elements.Text;
 import com.rozetka.core.web.elements.TextInput;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -46,22 +47,33 @@ public class SearchPage extends WebPage<SearchPage> {
     }
 
     public SearchPage getDelete(){
-        wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath(".//*[@id='cart-popup']/div/div[1]/div[2]/div[1]/a/img")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.cssSelector(".cart-check-icon.sprite")));
         getDeleteFirstButton().click();
         wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.xpath(".//*[@id='cart-popup']/div/div[1]/div[2]/div[1]/div")));
+                By.name("delete")));
         getDeleteSecondButton().click();
         return this;
     }
 
-     private TextInput getSearch(){
-        return new TextInput(driver, By.name("text"));
+    public String getPriceSearch(){
+        return new Text(driver,
+                By.cssSelector(".g-price-uah")).getText();
+    }
+
+    public String getPriceBasket() {
+        return new Text(driver,
+                By.cssSelector(".cart-uah")).getText();
+    }
+
+     private TextInput getSearch() {
+         return new TextInput(driver, By.name("text"));
     }
 
     private Button getButtonSearch(){
         return new Button(driver,By.xpath("//*[@id='search']/form//span/button"));
     }
+
 
     private Button getButtonBuy(){
         return new Button(driver,
@@ -69,11 +81,10 @@ public class SearchPage extends WebPage<SearchPage> {
     }
 
     private Button getDeleteFirstButton(){
-        return new Button(driver, By.xpath(".//*[@id='cart-popup']/div/div[1]/div[2]/div[1]/a/img"));
+        return new Button(driver, By.cssSelector(".cart-check-icon.sprite"));
     }
 
     private Button getDeleteSecondButton(){
         return new Button(driver, By.name("delete"));
     }
-
 }
