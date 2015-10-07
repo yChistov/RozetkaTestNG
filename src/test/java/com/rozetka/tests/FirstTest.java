@@ -1,26 +1,26 @@
 package com.rozetka.tests;
 
 import com.rozetka.core.BaseSetup;
-import com.rozetka.core.CsvDataProvider;
+import com.rozetka.core.DataProviderClass;
 import com.rozetka.core.web.pages.MyHomePage;
 import com.rozetka.core.web.pages.SearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 public class FirstTest extends BaseSetup {
 
-    @Test(dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
-    public void startURL(Map<String, String> testData) throws TimeoutException {
+    @Test(dataProvider = "DataProviderSearch", dataProviderClass = DataProviderClass.class)
+    public void startURL(String search) throws TimeoutException {
         SearchPage targetPage = new MyHomePage(driver)
                 .loadAsAnonymousUser()
-                .loginAs(testData.get("login"), testData.get("password"))
+                .loginAs("misteriys@ukr.net", "ghjuhfvbcn")
                 .goToFindPage()
-                .getSearch(testData.get("search"))
+                .getSearch(search)
                 .getBuy()
-                .getDelete();
+                .getDelete()
+                .getBack();
         System.out.println(targetPage.getPriceSearch());
         System.out.println(targetPage.getPriceBasket());
         Assert.assertEquals(targetPage.getPriceSearch(), targetPage.getPriceBasket());
