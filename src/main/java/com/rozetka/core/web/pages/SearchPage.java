@@ -41,6 +41,11 @@ public class SearchPage extends WebPage<SearchPage> {
         return this;
     }
 
+    public SearchPage getBack(){
+        driver.navigate().back();
+        return this;
+    }
+
     public SearchPage getRefresh(){
         driver.navigate().refresh();
         return this;
@@ -66,7 +71,7 @@ public class SearchPage extends WebPage<SearchPage> {
                 By.cssSelector(".cart-uah")).getText();
     }
 
-     private TextInput getSearch() {
+    private TextInput getSearch() {
          return new TextInput(driver, By.name("text"));
     }
 
